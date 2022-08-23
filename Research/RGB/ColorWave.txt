@@ -1,0 +1,53 @@
+#Paket 1
+
+0000   1c 00 10 a2 d5 a4 84 c3 ff ff 00 00 00 00 1b 00
+0010   00 02 00 01 00 00 02 1c 00 00 00 00 21 09 11 02
+0020   01 00 14 00 11 ff 03 3f 00 00 00 00 00 00 00 00
+0030   00 00 00 00 00 00 00 00
+
+
+#Paket 2 (Troligen Animations läge (ColorWave i detta fall))
+
+0000   1c 00 10 70 53 a0 84 c3 ff ff 00 00 00 00 1b 00
+0010   00 02 00 01 00 00 02 1c 00 00 00 00 21 09 11 02
+0020   01 00 14 00 11 ff 03 1f 00 00 00 00 00 00 00 00
+0030   00 00 00 00 00 00 00 00
+
+HEADER = 11FF03 (1F)
+Vid ändring av riktning skickas 1D istället för 1F.
+Någon sorts instruktion på vad som ska komma.
+
+
+#Paket 3 (Troligen riktning på animationen (Horisontell i detta fall))
+
+0000   1c 00 60 86 80 9f 84 c3 ff ff 00 00 00 00 1b 00
+0010   00 02 00 01 00 00 02 1c 00 00 00 00 21 09 11 02
+0020   01 00 14 00 11 ff 0d 3f 00 04 00 00 00 00 00 00
+0030   88 01 64 13 00 00 00 00
+
+88 (01) 64 13
+01 = Horisontell
+02 = Vertikal
+?
+
+
+# Paket 4 (Troligen hur snabb animationen är (5000ms i detta fall))
+
+0000   1c 00 60 d6 56 a0 84 c3 ff ff 00 00 00 00 1b 00
+0010   00 02 00 01 00 00 02 1c 00 00 00 00 21 09 11 02
+0020   01 00 14 00 11 ff 0d 3f 01 03 00 00 00 00 00 13
+0030   88 64 00 00 00 00 00 00
+
+1388 = 5000ms 64 osäker.
+
+
+# Paket 5
+
+0000   1c 00 10 d0 56 a0 84 c3 ff ff 00 00 00 00 1b 00
+0010   00 02 00 01 00 00 02 1c 00 00 00 00 21 09 11 02
+0020   01 00 14 00 11 ff 0f 2f 00 00 00 00 00 00 00 00
+0030   00 00 00 00 00 00 00 00
+
+Sista paketet, 11FF0F är constant för alla ColorWave.
+2F är för ändring till ColorWave
+2D vid ändring av riktning (Inte säker på vad detta innebär)
