@@ -51,3 +51,16 @@ Någon sorts instruktion på vad som ska komma.
 Sista paketet, 11FF0F är constant för alla ColorWave.
 2F är för ändring till ColorWave
 2D vid ändring av riktning (Inte säker på vad detta innebär)
+
+
+# Ändringsförfrågan till tangentbordet
+0000   1c 00 10 50 3d a5 84 c3 ff ff 00 00 00 00 1b 00
+0010   00 02 00 01 00 00 02 1c 00 00 00 00 21 09 11 02
+0020   01 00 14 00 11 ff 0d 3c 00 04 00 00 00 00 00 00
+0030   3c 02 64 28 00 00 00 00
+
+3c 02 64 28
+
+283C = 10300 ms = Hastigheten
+02 = Vertikal = Riktningen
+64 = Osäker verkar statisk
