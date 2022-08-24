@@ -2,13 +2,16 @@ import { devices, HID } from "node-hid";
 
 class LogitechGPro {
     private device: HID;
+    private VENDOR_ID = 0x046d;
+    private PRODUCT_ID = 0xc339;
+    private USAGE_ID = 0xFF43;
     private package: Buffer = Buffer.alloc(20, 0x00);
 
     constructor() {
-        const filterKeyboard = devices().filter(device => device.vendorId === 0x046d && device.productId === 0xc339 && device.usagePage === 65347);
+        const filterKeyboard = devices().filter(device => device.vendorId === this.VENDOR_ID && device.productId === this.PRODUCT_ID && device.usagePage === this.USAGE_ID);
 
         if (filterKeyboard.length === 0 || filterKeyboard[0].path === undefined) {
-            throw new Error('Logitech G Pro keyboard found');
+            throw new Error('No Logitech G Pro keyboard found');
         }
 
         this.device = new HID(filterKeyboard[0].path);
